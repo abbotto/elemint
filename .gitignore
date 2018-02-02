@@ -1,0 +1,43 @@
+# Initialize Blacklist
+*
+/doc/styles/*.*
+
+# Whitelist Dot files
+!.eslintrc.js
+!.gitignore
+!.nvmrc
+!.travis.yml
+!CONTRIBUTING.md
+!LICENSE.txt
+!README.md
+!package.json
+
+# Whitelist JSON
+!package.json
+
+# Whitelist Markdown
+!license.md
+!readme.md
+
+# Whitelist Source Code
+!/src
+!/src/**/*
+
+# Whitelist Distribution
+!/dist
+!/dist/**/*
+
+# Whitelist Tests
+!/test
+!/test/**/*
+
+# Whitelist Dev files
+!/dev
+!/dev/**/*
+
+# Whitelist Cfg files
+!/cfg
+!/cfg/**/*
+
+# Blacklist specific items
+.DS_Store
