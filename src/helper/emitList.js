@@ -1,0 +1,22 @@
+var emitList = [
+	'blur',
+	'click',
+	'dblclick',
+	'focus',
+	'keydown',
+	'keypress',
+	'keyup',
+	'mousedown',
+	'mouseenter',
+	'mouseleave',
+	'mousemove',
+	'mouseout',
+	'mouseover',
+	'submit',
+	'touchcancel',
+	'touchend',
+	'touchenter',
+	'touchleave',
+	'touchmove',
+	'touchstart'
+];

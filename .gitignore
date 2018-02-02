@@ -1,0 +1,28 @@
+# Initialize Blacklist
+*
+
+# Whitelist files and directories
+!.eslintrc.js
+!.gitignore
+!.nvmrc
+!.travis.yml
+!CONTRIBUTING.md
+!elemint.js
+!LICENSE.md
+!README.md
+!package.json
+
+!/src
+!/src/**/*
+
+!/test
+!/test/**/*
+
+!/dev
+!/dev/**/*
+
+!/cfg
+!/cfg/**/*
+
+# Blacklist files and directories
+.DS_Store
