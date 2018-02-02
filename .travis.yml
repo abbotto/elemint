@@ -1,0 +1,28 @@
+language: node_js
+
+notifications:
+  email: false
+  
+sudo: required
+
+node_js:
+  - "8.9"
+
+env:
+  - CXX=g++-4.8
+
+addons:
+  chrome: stable
+
+cache:
+  directories:
+    - node_modules
+
+branches:
+  only:
+    - master
+
+script:
+  - npm i
+  - npm run build
+  - npm run test
