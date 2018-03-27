@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>method/style/style.set.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="$.html">$</a><ul class='methods'><li data-type='method'><a href="$.html#.after">after</a></li><li data-type='method'><a href="$.html#.animate">animate</a></li><li data-type='method'><a href="$.html#.animate/kill">animate/kill</a></li><li data-type='method'><a href="$.html#.animate/set">animate/set</a></li><li data-type='method'><a href="$.html#.ascend">ascend</a></li><li data-type='method'><a href="$.html#.before">before</a></li><li data-type='method'><a href="$.html#.child">child</a></li><li data-type='method'><a href="$.html#.class">class</a></li><li data-type='method'><a href="$.html#.class/kill">class/kill</a></li><li data-type='method'><a href="$.html#.class/set">class/set</a></li><li data-type='method'><a href="$.html#.class/sub">class/sub</a></li><li data-type='method'><a href="$.html#.descend">descend</a></li><li data-type='method'><a href="$.html#.event">event</a></li><li data-type='method'><a href="$.html#.event/emit">event/emit</a></li><li data-type='method'><a href="$.html#.event/kill">event/kill</a></li><li data-type='method'><a href="$.html#.event/set">event/set</a></li><li data-type='method'><a href="$.html#.fragment">fragment</a></li><li data-type='method'><a href="$.html#.layer">layer</a></li><li data-type='method'><a href="$.html#.layer/get">layer/get</a></li><li data-type='method'><a href="$.html#.layer/set">layer/set</a></li><li data-type='method'><a href="$.html#.match">match</a></li><li data-type='method'><a href="$.html#.mount">mount</a></li><li data-type='method'><a href="$.html#.offset">offset</a></li><li data-type='method'><a href="$.html#.offset/get">offset/get</a></li><li data-type='method'><a href="$.html#.offset/set">offset/set</a></li><li data-type='method'><a href="$.html#.parent">parent</a></li><li data-type='method'><a href="$.html#.position">position</a></li><li data-type='method'><a href="$.html#.prop">prop</a></li><li data-type='method'><a href="$.html#.prop/get">prop/get</a></li><li data-type='method'><a href="$.html#.prop/kill">prop/kill</a></li><li data-type='method'><a href="$.html#.prop/set">prop/set</a></li><li data-type='method'><a href="$.html#.query">query</a></li><li data-type='method'><a href="$.html#.ready">ready</a></li><li data-type='method'><a href="$.html#.render">render</a></li><li data-type='method'><a href="$.html#.sibling">sibling</a></li><li data-type='method'><a href="$.html#.size">size</a></li><li data-type='method'><a href="$.html#.size/get">size/get</a></li><li data-type='method'><a href="$.html#.size/set">size/set</a></li><li data-type='method'><a href="$.html#.style">style</a></li><li data-type='method'><a href="$.html#.style/get">style/get</a></li><li data-type='method'><a href="$.html#.style/set">style/set</a></li><li data-type='method'><a href="$.html#.unmount">unmount</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Elemint</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @memberof $
+ * @method style/set
+ *
+ * @description
+ * Get style values from an element.
+ *
+ * @param {Object|String} rulesOrProperty CSS key-pair list or a CSS property name.
+ * @param {String} value The style that will be applied.
+ *
+ * @example
+ * // Single rule injection into document stylesheets with object
+ * $.style(div:before).set({ prop: value, ... });
+ *
+ * // Single rule injection into document stylesheets with string
+ * $.style(div:before).set({ prop: value, ... });
+ *
+ * // Multiple rule injection into document stylesheets with string
+ * $.style(div:before { prop: value, ... } div:after { prop: value, ... } ...).set();
+ *
+ * // Multiple rule injection into document stylesheets with string via array
+ * $.style([div:before { prop: value, ... }, div:after { prop: value, ... }]).set();
+ *
+ * // Inline rules
+ * $.style(target, optionalContext).set(style, value);
+ * $.style(target, optionalContext).set({ prop: value, ... });
+ * $(target).style.set(style, value, optionalContext);
+ * $(target).style.set({ prop: value, ... }, optionalContext);
+ */
+function styleSet(css, opt) {
+	var args = this;
+	var subject = args[0];
+	var len = args[1];
+	var styles = '';
+	var i;
+
+	// Insert the new rules into a stylesheet
+	if (subject &amp;&amp; subject[0] &amp;&amp; subject[0].substring) {
+		if (toString(subject) === '[object Array]') {
+			i = 0;
+
+			while (i &lt; len) {
+				$tyle.sheet.insertRule(subject[i], $tyle.sheet.cssRules.length);
+				i += 1;
+			}
+		}
+		// Single rule
+		else if (opt &amp;&amp; opt.substring) {
+			subject += ' { ' + css + ':' + opt + '; }';
+			$tyle.sheet.insertRule(subject, $tyle.sheet.cssRules.length);
+		}
+		// Multiple rules contained in an object
+		else if (toString(css) === '[object Object]') {
+			for (prop in css) {
+				if (css.hasOwnProperty(prop)) {
+					styles += prop + ':' + prop === 'content'
+						? '\'' + css[prop] + '\';'
+						: css[prop] + ';'
+					;
+				}
+			}
+			subject += ' { ' + styles + ' }';
+			$tyle.sheet.insertRule(subject, $tyle.sheet.cssRules.length);
+		}
+		else if (subject.substring) {
+			// Inject a stylesheet
+			$tyle.element.appendChild($tyle.context.createTextNode(subject));
+		}
+	}
+	// Apply the new rules inline on the selected elements
+	else if (subject) {
+		var key;
+		var n;
+
+		// Single CSS style
+		if (css &amp;&amp; css.substring &amp;&amp; opt) while (i--) subject[i].style[css] = opt;
+
+		// Loop through CSS object containing multiple styles and set them on each element
+		else if (toString(css) === '[object Object]') {
+			while (i--) {
+				for (key in css) {
+					if (css.hasOwnProperty(key)) {
+						subject[i].style[key] = css[key];
+					}
+				}
+			}
+		}
+		else throwError('Argument failed. Invalid argument.');
+	}
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated  on Sun Apr 15 2018 22:54:25 GMT-0230 (NDT).
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

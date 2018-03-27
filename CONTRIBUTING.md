@@ -35,6 +35,25 @@ A good bug report should generally contain the following information:
 - A clean commit history makes it easier to debug issues
 - We can keep the history clean with one commit per feature
 	- Squash every commit that was made in a PR after team review
+	
+### Use semantic commit messages
+
+- `chore`: (edits to dev scripts and configs - no production code change)
+- `docs`: (edits to the documentation)
+- `feat`: (user feature - not a dev feature)
+- `fix`: (bugfix for a user feature - not for a dev feature)
+- `refactor`: (refactoring production code - eg. renaming a variable)
+- `style`: (edits based on linting rules - no production code change)
+- `test`: (add or edit tests - no production code change)
+
+```
+feat: make excuse generator
+^--^  ^-------------------^
+|     |
+|     +-> Summary in present tense.
+|
++-------> Type: chore, docs, feat, fix, refactor, style, or test.
+```
 
 ### Keep the documentation up-to-date
 - Create documentation for new features

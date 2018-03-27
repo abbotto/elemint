@@ -1,0 +1,5364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>$ - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="$.html">$</a><ul class='methods'><li data-type='method'><a href="$.html#.after">after</a></li><li data-type='method'><a href="$.html#.animate">animate</a></li><li data-type='method'><a href="$.html#.animate/kill">animate/kill</a></li><li data-type='method'><a href="$.html#.animate/set">animate/set</a></li><li data-type='method'><a href="$.html#.ascend">ascend</a></li><li data-type='method'><a href="$.html#.before">before</a></li><li data-type='method'><a href="$.html#.child">child</a></li><li data-type='method'><a href="$.html#.class">class</a></li><li data-type='method'><a href="$.html#.class/kill">class/kill</a></li><li data-type='method'><a href="$.html#.class/set">class/set</a></li><li data-type='method'><a href="$.html#.class/sub">class/sub</a></li><li data-type='method'><a href="$.html#.descend">descend</a></li><li data-type='method'><a href="$.html#.event">event</a></li><li data-type='method'><a href="$.html#.event/emit">event/emit</a></li><li data-type='method'><a href="$.html#.event/kill">event/kill</a></li><li data-type='method'><a href="$.html#.event/set">event/set</a></li><li data-type='method'><a href="$.html#.fragment">fragment</a></li><li data-type='method'><a href="$.html#.layer">layer</a></li><li data-type='method'><a href="$.html#.layer/get">layer/get</a></li><li data-type='method'><a href="$.html#.layer/set">layer/set</a></li><li data-type='method'><a href="$.html#.match">match</a></li><li data-type='method'><a href="$.html#.mount">mount</a></li><li data-type='method'><a href="$.html#.offset">offset</a></li><li data-type='method'><a href="$.html#.offset/get">offset/get</a></li><li data-type='method'><a href="$.html#.offset/set">offset/set</a></li><li data-type='method'><a href="$.html#.parent">parent</a></li><li data-type='method'><a href="$.html#.position">position</a></li><li data-type='method'><a href="$.html#.prop">prop</a></li><li data-type='method'><a href="$.html#.prop/get">prop/get</a></li><li data-type='method'><a href="$.html#.prop/kill">prop/kill</a></li><li data-type='method'><a href="$.html#.prop/set">prop/set</a></li><li data-type='method'><a href="$.html#.query">query</a></li><li data-type='method'><a href="$.html#.ready">ready</a></li><li data-type='method'><a href="$.html#.render">render</a></li><li data-type='method'><a href="$.html#.sibling">sibling</a></li><li data-type='method'><a href="$.html#.size">size</a></li><li data-type='method'><a href="$.html#.size/get">size/get</a></li><li data-type='method'><a href="$.html#.size/set">size/set</a></li><li data-type='method'><a href="$.html#.style">style</a></li><li data-type='method'><a href="$.html#.style/get">style/get</a></li><li data-type='method'><a href="$.html#.style/set">style/set</a></li><li data-type='method'><a href="$.html#.unmount">unmount</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Elemint</h1>
+    
+
+    
+
+
+
+
+<section>
+<h3 class="subsection-title">The <strong>elemint</strong> function</h3>
+<header>
+    
+        <h2>
+        $
+        
+        <small>(<a href="module.js.html">module.js</a>, <a href="module.js.html#line99">line 99</a>)</small>
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+        
+            <p><p>A function that returns the following chainable methods.</p>
+<ul>
+<li>after</li>
+<li>ascend</li>
+<li>before</li>
+<li>child</li>
+<li>class (kill, set, sub)</li>
+<li>descend</li>
+<li>event (emit, kill, set)</li>
+<li>layer</li>
+<li>match</li>
+<li>mount</li>
+<li>offset</li>
+<li>parent</li>
+<li>position</li>
+<li>prop (get, kill, set)</li>
+<li>sibling</li>
+<li>size (get, set)</li>
+<li>style (get, set)</li>
+<li>unmount</li>
+</ul></p>
+        
+
+        
+            
+    <pre class="prettyprint"><code>$(elementOrSelector)
+$$(elementOrSelector)
+elemint(elementOrSelector)</code></pre>
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">The <strong>elemint</strong> object</h3>
+
+        
+            
+
+    
+    
+    <h2 id=".after">$.after
+        <small>(<a href="method_after.js.html">method/after.js</a>, <a href="method_after.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Return the immediately following sibling OR next matched sibling of each element in the set of matched elements.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.after(target, optionalSelector);
+$(target).after(optionalSelector);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The element(s) whose next sibling will be obtained.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Return the next sibling that matches the given selector.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>Element collection.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".animate">$.animate
+        <small>(<a href="method_animate.js.html">method/animate.js</a>, <a href="method_animate.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Manage DOM animations.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.animate;</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The target element(s).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>methods An object containing the 'set, kill' methods.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".animate/kill">$.animate.kill
+        <small>(<a href="method_animate_animate.kill.js.html">method/animate/animate.kill.js</a>, <a href="method_animate_animate.kill.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Kill a DOM animation.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.animate.kill(tag);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tag</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Animation identification.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".animate/set">$.animate.set
+        <small>(<a href="method_animate_animate.set.js.html">method/animate/animate.set.js</a>, <a href="method_animate_animate.set.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Configure and start a DOM animation.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>var config = {
+    tag: 'myAnimation',
+    callback: () => {...}
+};
+
+$.animate.set(config);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Animation configuration.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".ascend">$.ascend
+        <small>(<a href="method_ascend.js.html">method/ascend.js</a>, <a href="method_ascend.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Find all the matched ancestors at each upper level relative to the subject.
+Will return <code>n</code> levels of anscestors until the limit is reached.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.ascend(target, optionalSelector, limit);
+$(target).ascend(optionalSelector, limit);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span>
+|
+
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The element(s) whose ancestors will be returned.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Narrow the search result by selector.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Limit how many ancestors will be returned.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>An array of ancestors that match the given selector.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".before">$.before
+        <small>(<a href="method_before.js.html">method/before.js</a>, <a href="method_before.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Return the immediately preceding sibling OR preceding matched sibling of each element in the set of matched elements.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.before(target, optionalSelector);
+$(target).before(optionalSelector);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The element(s) whose preceding sibling will be obtained.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Return a preceding sibling that matches the given selector.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>Element collection.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".child">$.child
+        <small>(<a href="method_child.js.html">method/child.js</a>, <a href="method_child.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Return the immediate children of the matched elements.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.child(target, optionalSelector);
+$(target).child(optionalSelector);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The parent element(s).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Find a specific subset of children.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>A collection of the selected element's children.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".class">$.class
+        <small>(<a href="method_class.js.html">method/class.js</a>, <a href="method_class.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Manipulate element classes</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.class(target);
+$(target).class;</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The target element(s).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>methods An object containing the 'set, kill, sub, test' methods.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".class/kill">$.class.kill
+        <small>(<a href="method_class_class.kill.js.html">method/class/class.kill.js</a>, <a href="method_class_class.kill.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Disable a class on an element's <code>className</code> property.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.class(target).kill(classA, classB, classN, ...);
+$(target).class.kill(classA, classB, classN, ...);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>classes</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The classnames to be disabled.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".class/set">$.class.set
+        <small>(<a href="method_class_class.set.js.html">method/class/class.set.js</a>, <a href="method_class_class.set.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Enable a class on an element's <code>className</code> property.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.class(target).set(classA, classB, classN, ...);
+$(target).class.set(classA, classB, classN, ...);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>classes</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The classnames to be enabled.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".class/sub">$.class.sub
+        <small>(<a href="method_class_class.sub.js.html">method/class/class.sub.js</a>, <a href="method_class_class.sub.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Substitute a class on an element's <code>className</code> property with another class.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.class(target).sub('classA', 'classB');
+$(target).class.sub('classA', 'classB');</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The class that will be replaced.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>replacement</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The class that will replace the target class.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".descend">$.descend
+        <small>(<a href="method_descend.js.html">method/descend.js</a>, <a href="method_descend.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Find all the matched descendants at each level of depth relative to the subject.
+Will return <code>n</code> levels of descendants until the limit is reached.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.descend(target, optionalSelectorOrDepth, depth);
+$(target).descend(optionalSelectorOrDepth, depth);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The parent element(s).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selectorOrDepth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The target descendant or the depth at which the descending will stop.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>depth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The depth at which the descending will stop.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>An array of descendants that match the given selector.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".event">$.event
+        <small>(<a href="method_event.js.html">method/event.js</a>, <a href="method_event.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Manage element events</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.event(target);
+$(target).event;</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The target element(s).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>methods An object containing the 'set, kill, emit' methods.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".event/emit">$.event.emit
+        <small>(<a href="method_event_event.emit.js.html">method/event/event.emit.js</a>, <a href="method_event_event.emit.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Send an event to an element</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>var config = {
+    bubbles: true,
+    cancelable: true
+}
+
+$.event(target).emit('eventName', config);
+$(target).event.emit('eventName', config);
+
+var e = $.event(target);
+e.blur();
+e.click();
+e.dblclick();
+e.focus();
+e.keydown();
+e.keypress();
+e.keyup();
+e.mousedown();
+e.mouseenter();
+e.mouseleave();
+e.mousemove();
+e.mouseout();
+e.mouseover();
+e.submit();
+e.touchcancel();
+e.touchend();
+e.touchenter();
+e.touchleave();
+e.touchmove();
+e.touchstart();</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The name of the event</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The config for the event</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".event/kill">$.event.kill
+        <small>(<a href="method_event_event.kill.js.html">method/event/event.kill.js</a>, <a href="method_event_event.kill.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Stop an event listener</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.event(target).kill('tag');
+$(target).event.kill('eventName', callback);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tagOrEventName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A tag or event name for an existing event</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The original callback function to be used with an event name</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".event/set">$.event.set
+        <small>(<a href="method_event_event.set.js.html">method/event/event.set.js</a>, <a href="method_event_event.set.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Setup an event listener on an element</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>var config = {
+    on: '',
+    tag: '',
+    target: false,
+    callback: () => {...},
+    limit: false
+}
+
+$.event(target).set(config);
+$.event(target).set(evt, callback);
+$(target).event.set(config);
+$(target).event.set(evt, callback);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The target element(s)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Event listener configuration</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".fragment">$.fragment
+        <small>(<a href="method_fragment.js.html">method/fragment.js</a>, <a href="method_fragment.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Wrap HTML/nodes in a document fragment.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.fragment([el1, el2, el3, ...]);
+$.fragment("&lt;div>...&lt;/div>");</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>contents</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Element</span>
+|
+
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The html/elements that will be wrapped.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>The html/elements wrapper.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Fragment</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".layer">$.layer
+        <small>(<a href="method_layer.js.html">method/layer.js</a>, <a href="method_layer.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Manage element layers.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.layer(target);
+$(target).layer;</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The target element(s).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>methods An object containing the 'set, get' methods.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".layer/get">$.layer.get
+        <small>(<a href="method_layer_layer.get.js.html">method/layer/layer.get.js</a>, <a href="method_layer_layer.get.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Return the z-index of an element.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.layer(target).get();
+$(target).layer.get()</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>The z-index of the element.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".layer/set">$.layer.set
+        <small>(<a href="method_layer_layer.set.js.html">method/layer/layer.set.js</a>, <a href="method_layer_layer.set.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Set the z-index of an element.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.layer(target).set(newIndex);
+$(target).layer.set(newIndex)</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>z-index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The new z-index for the element(s).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".match">$.match
+        <small>(<a href="method_match.js.html">method/match.js</a>, <a href="method_match.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Return a set of elements that match the selector or pass the test.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.match(target, selectorOrTest, test);
+$(target).match(selectorOrTest, test);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The set of elements.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selectorOrTest</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A query selector or a testing function used to find a match.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>test</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+|
+
+<span class="param-type">Undefined</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A testing function used to find a match.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".mount">$.mount
+        <small>(<a href="method_mount.js.html">method/mount.js</a>, <a href="method_mount.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <ul>
+<li>Mounting is a process that inserts elements into the DOM.</li>
+<li>Mount an element or fragment in a parent element.</li>
+<li>Will default to mounting the selected element(s) in <code>document.body</code> if no other arguments are passed.<ul>
+<li>innerEnd: <code>afterend</code> of subject's last child.</li>
+<li>innerBegin: <code>beforebegin</code> of subject's first child.</li>
+<li>outerEnd: <code>afterend</code> of subject's last sibling.</li>
+<li>outerBegin: <code>beforebegin</code> of subject's first sibling.</li>
+<li>before: <code>beforebegin</code> of subject.</li>
+<li>after: <code>afterend</code> of subject.</li>
+</ul>
+</li>
+</ul>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.mount(
+    target,
+    locationOrPayload,
+    payload
+);
+
+$(target).mount(
+    locationOrPayload,
+    payload
+);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span>
+|
+
+<span class="param-type">Fragment</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The point of reference for the mountpoint location.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>locationOrPayload</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+|
+
+<span class="param-type">Fragment</span>
+|
+
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Undefined</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The mountpoint location relative to the target or the payload elements with the default mountpoint location set to <code>innerEnd</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>payload</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+|
+
+<span class="param-type">Fragment</span>
+|
+
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Undefined</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The payload elements that will be mounted.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".offset">$.offset
+        <small>(<a href="method_offset.js.html">method/offset.js</a>, <a href="method_offset.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Manage element offsets.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.offset(target);
+$(target).offset;</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The target element(s).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>methods An object containing the 'set, get' methods.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".offset/get">$.offset.get
+        <small>(<a href="method_offset_offset.get.js.html">method/offset/offset.get.js</a>, <a href="method_offset_offset.get.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Return the offset of an element relative to the document.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.offset(target).get();
+$(target).offset.get();</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>An object containing the element(s) offset as it's properties.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".offset/set">$.offset.set
+        <small>(<a href="method_offset_offset.set.js.html">method/offset/offset.set.js</a>, <a href="method_offset_offset.set.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Set the offset of an element relative to the document.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.offset(target).set({top: ..., left: ...});
+$(target).offset.set({top: ..., left: ...});</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The new offset of the element(s).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".parent">$.parent
+        <small>(<a href="method_parent.js.html">method/parent.js</a>, <a href="method_parent.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Return the parent of the matched elements.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.parent(target);
+$.parent(target, true);
+$(target).parent();
+$(target).parent(true);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The element whose parent will be selected.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>offsetParent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Find the nearest ancestor that is positioned.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>The selected parent elements.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".position">$.position
+        <small>(<a href="method_position.js.html">method/position.js</a>, <a href="method_position.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Return the position of an element relative to it's offset parent.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.position(target);
+$(target).position();</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The element whose position will be returned.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>The position of the element returned within an object.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".prop">$.prop
+        <small>(<a href="method_prop.js.html">method/prop.js</a>, <a href="method_prop.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Manage element properties (attributes)</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.prop(target);
+$(target).prop;</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The target element(s)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>methods An object containing the 'set, get, kill' methods</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".prop/get">$.prop.get
+        <small>(<a href="method_prop_prop.get.js.html">method/prop/prop.get.js</a>, <a href="method_prop_prop.get.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Get a value from an element property (attribute).</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.prop(target).get('property');
+$.prop(target).get('propertyA', 'propertyB');
+$(target).prop.get('property');
+$(target).prop.get('propertyA', 'propertyB');</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>prop</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A comma-separated list of properties whose value(s) will be fetched.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>prop An object with property key-values or a single value string.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".prop/kill">$.prop.kill
+        <small>(<a href="method_prop_prop.kill.js.html">method/prop/prop.kill.js</a>, <a href="method_prop_prop.kill.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Remove property (attribute) from an element.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.prop(target).kill('property');
+$(target).prop.kill('property');</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>prop</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The property whose value will be removed.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".prop/set">$.prop.set
+        <small>(<a href="method_prop_prop.set.js.html">method/prop/prop.set.js</a>, <a href="method_prop_prop.set.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Set a value on an element property (attribute).</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.prop(target).set('propName', 'value';
+$(target).prop.set('propName', 'value');
+
+$.prop(target).set({'propName: 'value'};
+$(target).prop.set({'propName: 'value'});</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ObjectOrKey</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Attribute key-pair values or an attribute name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value that will be set to the property.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".query">$.query
+        <small>(<a href="method_query.js.html">method/query.js</a>, <a href="method_query.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Look-up DOM elements and return them in an array.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>// Elemint object with cached elements
+$(target);
+
+// Array of elements
+$.query(selector);
+
+// Shorthand for returning an array of elements
+$.$(target);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Nodelist</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The element(s) that will be selected.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Document</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A parent whose children will be queried against the given <code>selector</code>. The default context is the current <code>document</code>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>An element collection.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".ready">$.ready
+        <small>(<a href="method_ready.js.html">method/ready.js</a>, <a href="method_ready.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Execute a function when the DOM is ready.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.ready(() => {
+    // body...
+});</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A callback function.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".render">$.render
+        <small>(<a href="method_render.js.html">method/render.js</a>, <a href="method_render.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Accept markup and return a collection of elements in an array.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.render(payload);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>payload</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The markup that will be converted to elements.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>The resulting array of elements.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".sibling">$.sibling
+        <small>(<a href="method_sibling.js.html">method/sibling.js</a>, <a href="method_sibling.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Return all matched elements that share the same immediate parent as the subject (subject excluded).</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.sibling(target, optionalSelector);
+$(target).sibling(optionalSelector);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The element(s) whose siblings will be selected.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Query the siblings by selector.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>The subject(s) siblings.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".size">$.size
+        <small>(<a href="method_size.js.html">method/size.js</a>, <a href="method_size.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Get or set the dimensions of an element.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.size(target);
+$(target).size;</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The target element(s).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>methods An object containing the 'set, get' methods.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".size/get">$.size.get
+        <small>(<a href="method_size_size.get.js.html">method/size/size.get.js</a>, <a href="method_size_size.get.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Get the height/width of an element.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.size(target).get();
+$.size(target).get('height');
+$(target).size.get();
+$(target).size.get('height');</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>heightOrWidth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Specify a single dimension to return.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>An object containing the element's dimensions.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".size/set">$.size.set
+        <small>(<a href="method_size_size.set.js.html">method/size/size.set.js</a>, <a href="method_size_size.set.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Set the height/width of an element.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.size(target).set(config);
+$(target).size.set(config);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The element(s) whose dimensions will be set.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".style">$.style
+        <small>(<a href="method_style.js.html">method/style.js</a>, <a href="method_style.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Manage document styles.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.style(target);
+$.style(target, document);
+$(target).style;
+$(target, document).style;</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>elementOrProp</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span>
+|
+
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An element(s) or CSS selector.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Document</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The context which will be used - default is .</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>methods An object containing the 'set, get' methods.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".style/get">$.style.get
+        <small>(<a href="method_style_style.get.js.html">method/style/style.get.js</a>, <a href="method_style_style.get.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Get style values from an element.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>$.style(target).get(prop1, prop2, propN, ...);
+$(target).style.get(prop1, prop2, propN, ...);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>style</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The style(s) whose value will be returned.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Returns:</strong>
+<small style="display: block; margin: 0 0 1.5rem 0; padding: 0 0.6rem; border: 1px solid rgba(0,0,0,0.1);" class="params">
+    
+            
+<div class="param-desc">
+    <p>CSS key-pair list or a CSS property value.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+        
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".style/set">$.style.set
+        <small>(<a href="method_style_style.set.js.html">method/style/style.set.js</a>, <a href="method_style_style.set.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Get style values from an element.</p>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>// Single rule injection into document stylesheets with object
+$.style(div:before).set({ prop: value, ... });
+
+// Single rule injection into document stylesheets with string
+$.style(div:before).set({ prop: value, ... });
+
+// Multiple rule injection into document stylesheets with string
+$.style(div:before { prop: value, ... } div:after { prop: value, ... } ...).set();
+
+// Multiple rule injection into document stylesheets with string via array
+$.style([div:before { prop: value, ... }, div:after { prop: value, ... }]).set();
+
+// Inline rules
+$.style(target, optionalContext).set(style, value);
+$.style(target, optionalContext).set({ prop: value, ... });
+$(target).style.set(style, value, optionalContext);
+$(target).style.set({ prop: value, ... }, optionalContext);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>rulesOrProperty</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>CSS key-pair list or a CSS property name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The style that will be applied.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+            
+
+    
+    
+    <h2 id=".unmount">$.unmount
+        <small>(<a href="method_unmount.js.html">method/unmount.js</a>, <a href="method_unmount.js.html#line1">line 1</a>)</small>
+    </h2>
+    
+    
+    
+    <!-- Description -->
+    <p>Unmounting is a process that removes elements from the DOM.
+Unmount an element or it's relative.</p>
+<ul>
+<li>innerEnd: <code>afterend</code> of subject's last child</li>
+<li>innerBegin: <code>beforebegin</code> of subject's first child</li>
+<li>outerEnd: <code>afterend</code> of subject's last sibling</li>
+<li>outerBegin: <code>beforebegin</code> of subject's first sibling</li>
+<li>before: <code>beforebegin</code> of subject</li>
+<li>after: <code>afterend</code> of subject</li>
+</ul>
+    
+
+    <!-- Usage example -->
+    
+        
+    <pre class="prettyprint"><code>// Self
+$.unmount(target);
+$(target).unmount();
+
+// Relatives
+$.unmount(target, relativeLocation);
+$(target).unmount(relativeLocation);
+$.unmount(target, childElement);
+$(target).unmount(childElement);</code></pre>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    <strong>Arguments:</strong>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The point of reference for the mountpoint location.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>relative</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The location of an element that will be removed relative to the target.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</small>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated  on Sun Apr 15 2018 22:54:25 GMT-0230 (NDT).
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
