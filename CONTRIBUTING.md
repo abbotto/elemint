@@ -42,12 +42,12 @@ A good bug report should contain some or all of the following information:
 - `fix`: Fix malfunctioning code.
 - `perf`: Changes that improve code performance.
 - `refactor`: Restructure code without changing the behaviour.
-- `style`: edits based on linting rules.
+- `style`: Changes based on project conventions and linting rules.
 - `test`: Add or edit tests.
 
 ```
-feat: make excuse generator
-^--^  ^-------------------^
+feat: do all the things
+^--^  ^---------------^
 |     |
 |     +-> Summary in present tense.
 |
