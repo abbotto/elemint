@@ -9,17 +9,17 @@
  * @param {String} value The style that will be applied.
  *
  * @example
- * // Single rule injection into document stylesheets with object
- * $.style(div:before).set({ prop: value, ... });
- *
  * // Single rule injection into document stylesheets with string
- * $.style(div:before).set({ prop: value, ... });
+ * $.style('div:before').set(prop, value);
+ *
+ * // Multiple rule injection into document stylesheets with object
+ * $.style('div:before').set({ prop: value, ... });
  *
  * // Multiple rule injection into document stylesheets with string
- * $.style(div:before { prop: value, ... } div:after { prop: value, ... } ...).set();
+ * $.style('div:before { prop: value, ... } div:after { prop: value, ... } ...').set();
  *
  * // Multiple rule injection into document stylesheets with string via array
- * $.style([div:before { prop: value, ... }, div:after { prop: value, ... }]).set();
+ * $.style(['div:before { prop: value, ... }', 'div:after { prop: value, ... }']).set();
  *
  * // Inline rules
  * $.style(target, optionalContext).set(style, value);
