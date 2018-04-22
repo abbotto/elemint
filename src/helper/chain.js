@@ -48,16 +48,16 @@ function chain(result) {
 		},
 		event: {
 			set: function (config) {
-				event(this.$).set(config);
-				return this;
+				event($$.fn.$).set(config);
+				return $$.fn;
 			},
 			kill: function (eventId, callback) {
-				event(this.$).kill(eventId, callback);
-				return this;
+				event($$.fn.$).kill(eventId, callback);
+				return $$.fn;
 			},
 			emit: function (eventName, config) {
-				event(this.$).emit(eventName, config);
-				return this;
+				event($$.fn.$).emit(eventName, config);
+				return $$.fn;
 			}
 		},
 		layer: {
