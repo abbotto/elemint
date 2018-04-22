@@ -16,7 +16,6 @@
     "build": "./dev/build.sh",
     "doc": "./dev/doc.sh",
     "lint": "./dev/lint.sh",
-    "bump": "./dev/bump.sh",
     "start": "./dev/start.sh",
     "test": "./dev/test.sh"
   },
@@ -33,8 +32,6 @@
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-react": "7.7.0",
     "glob-concat": "1.0.1",
-    "gulp": "3.9.1",
-    "gulp-bump": "3.1.0",
     "jsdoc": "3.5.5",
     "karma": "2.0.0",
     "karma-chai": "0.1.0",
