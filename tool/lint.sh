@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Node + ES6
 node_modules/.bin/eslint -c .eslintrc.js \
---fix test/ dev/
+--fix test/ tool/
 
 # ES5
 node_modules/.bin/eslint -c src/.eslintrc.js \

@@ -9,11 +9,11 @@
  * @param {String} value The value that will be set to the property.
  *
  * @example
- * $.prop(target).set('propName', 'value';
+ * $.prop(target).set('propName', 'value');
  * $(target).prop.set('propName', 'value');
  *
- * $.prop(target).set({'propName: 'value'};
- * $(target).prop.set({'propName: 'value'});
+ * $.prop(target).set({'propName1: 'value1', 'propName2: 'value2'};
+ * $(target).prop.set({'propName1: 'value1', 'propName2: 'value2'});
  */
 function propSet(prp, value) {
 	var args = this;
