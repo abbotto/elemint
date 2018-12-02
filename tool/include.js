@@ -20,7 +20,12 @@ const include = (root, output) => {
 		}
 	});
 
-	fs.writeFile(output, rootContent, { flag: 'wx' }, error => error);
+	fs.writeFile(
+		output,
+		rootContent,
+		{ flag: 'wx' },
+		error => error
+	);
 };
 
 include(

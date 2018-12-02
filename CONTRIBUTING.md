@@ -36,12 +36,11 @@ A good bug report should contain some or all of the following information:
 ### Use semantic commit messages
 
 - `build`: Changes to the build system and external dependencies.
-- `ci`: Changes to the CI files.
-- `docs`: Changes to the documentation.
+- `deploy`: Changes to the deployment files.
+- `doc`: Changes to the documentation.
 - `feat`: Add new behaviour to the code.
 - `fix`: Fix malfunctioning code.
-- `perf`: Changes that improve code performance.
-- `refactor`: Restructure code without changing the behaviour.
+- `refactor`: Change code without altering the external behaviour.
 - `style`: Changes based on project conventions and linting rules.
 - `test`: Add or edit tests.
 
@@ -51,7 +50,7 @@ feat: do all the things
 |     |
 |     +-> Summary in present tense.
 |
-+-------> Type: build, ci, docs, feat, fix, perf, refactor, style, or test.
++-------> Type: build, ci, doc, feat, fix, refactor, style, or test.
 ```
 
 ### Keep the documentation up-to-date
@@ -63,4 +62,4 @@ feat: do all the things
 - Mac OS
 - Windows (via [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10))
 
-##### Thank you for your interest in contributing to this project!
+##### Thank you for reading this document - please feel free to contribute

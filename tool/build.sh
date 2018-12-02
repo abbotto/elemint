@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Cleanup
 rm -f elemint.js
 
 # Include scripts
-node dev/include.js
+node tool/include.js
 
 # This is a `dist` build
 if [ "$1" != "test" ]; then

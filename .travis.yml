@@ -22,6 +22,9 @@ branches:
   only:
     - master
 
+before_install:
+- export CHROME_BIN=chromium-browser
+
 script:
   - npm i
   - npm run build

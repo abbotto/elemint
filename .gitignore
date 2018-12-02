@@ -7,22 +7,22 @@
 !.nvmrc
 !.travis.yml
 !CONTRIBUTING.md
-!elemint.js
 !LICENSE.md
 !README.md
+!elemint.js
 !package.json
 
 !/src
 !/src/**/*
 
+!/cfg
+!/cfg/**/*
+
 !/test
 !/test/**/*
 
-!/dev
-!/dev/**/*
-
-!/cfg
-!/cfg/**/*
+!/tool
+!/tool/**/*
 
 # Blacklist files and directories
 .DS_Store

@@ -36,7 +36,7 @@
 		require('@elemint/elemint');
 
 #### Contributing
-- Contribution infomation can be found [here](https://raw.githubusercontent.com/abbotto/elemint/master/CONTRIBUTING.md).
+- Infomation on how to contribute can be found [here](https://raw.githubusercontent.com/abbotto/elemint/master/CONTRIBUTING.md).
 
-#### License
+#### MIT License
 - License information can be found [here](https://raw.githubusercontent.com/abbotto/elemint/master/LICENSE.md).

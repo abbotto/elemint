@@ -1,6 +1,3 @@
-// For ChromeHeadless via Puppeteer
-process.env.CHROMIUM_BIN = require('puppeteer').executablePath();
-
 const files = [
 	'../elemint.js',
 	'../test/bootstrap.js',
@@ -45,10 +42,15 @@ const settings = {
 	captureTimeout: 30000,
 	colors: true,
 	concurrency: Infinity,
-	frameworks: ['mocha', 'chai'],
+	frameworks: [
+		'chai',
+		'mocha'
+	],
 	logLevel: 'INFO',
 	port: 9876,
-	reporters: ['spec'],
+	reporters: [
+		'spec'
+	],
 	singleRun: true,
 	files,
 	specReporter,
