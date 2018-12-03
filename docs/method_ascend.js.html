@@ -46,13 +46,13 @@
  * Will return `n` levels of anscestors until the limit is reached.
  *
  * @param {Element|Array} target The element(s) whose ancestors will be returned.
- * @param {String} selector Narrow the search result by selector.
+ * @param {String} selectorOrLimit The target ancestor or the number of ancestors to return.
  * @param {Number} limit Limit how many ancestors will be returned.
  * @return {Array|Object} An array of ancestors that match the given selector.
  *
  * @example
- * $.ascend(target, optionalSelector, limit);
- * $(target).ascend(optionalSelector, limit);
+ * $.ascend(target, optionalSelectorOrLimit, limit);
+ * $(target).ascend(optionalSelectorOrLimit, limit);
  */
 var ascend = function ascend(subject, selector, limit) {
 	// Depth was passed in the selector position
@@ -99,7 +99,7 @@ var ascend = function ascend(subject, selector, limit) {
 <br class="clear">
 
 <footer>
-    Documentation generated  on Sun Apr 15 2018 22:54:25 GMT-0230 (NDT).
+    Documentation generated  on Sun Dec 02 2018 22:22:10 GMT-0330 (NST).
 </footer>
 
 <script>prettyPrint();</script>

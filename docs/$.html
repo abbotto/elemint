@@ -584,8 +584,8 @@ Will return <code>n</code> levels of anscestors until the limit is reached.</p>
     <!-- Usage example -->
     
         
-    <pre class="prettyprint"><code>$.ascend(target, optionalSelector, limit);
-$(target).ascend(optionalSelector, limit);</code></pre>
+    <pre class="prettyprint"><code>$.ascend(target, optionalSelectorOrLimit, limit);
+$(target).ascend(optionalSelectorOrLimit, limit);</code></pre>
 
     
 
@@ -650,7 +650,7 @@ $(target).ascend(optionalSelector, limit);</code></pre>
 
         <tr>
             
-                <td class="name"><code>selector</code></td>
+                <td class="name"><code>selectorOrLimit</code></td>
             
 
             <td class="type">
@@ -666,7 +666,7 @@ $(target).ascend(optionalSelector, limit);</code></pre>
 
             
 
-            <td class="description last"><p>Narrow the search result by selector.</p></td>
+            <td class="description last"><p>The target ancestor or the number of ancestors to return.</p></td>
         </tr>
 
     
@@ -3815,11 +3815,11 @@ $(target).prop.kill('property');</code></pre>
     <!-- Usage example -->
     
         
-    <pre class="prettyprint"><code>$.prop(target).set('propName', 'value';
+    <pre class="prettyprint"><code>$.prop(target).set('propName', 'value');
 $(target).prop.set('propName', 'value');
 
-$.prop(target).set({'propName: 'value'};
-$(target).prop.set({'propName: 'value'});</code></pre>
+$.prop(target).set({'propName1: 'value1', 'propName2: 'value2'};
+$(target).prop.set({'propName1: 'value1', 'propName2: 'value2'});</code></pre>
 
     
 
@@ -5077,17 +5077,17 @@ $(target).style.get(prop1, prop2, propN, ...);</code></pre>
     <!-- Usage example -->
     
         
-    <pre class="prettyprint"><code>// Single rule injection into document stylesheets with object
-$.style(div:before).set({ prop: value, ... });
+    <pre class="prettyprint"><code>// Single rule injection into document stylesheets with string
+$.style('div:before').set(prop, value);
 
-// Single rule injection into document stylesheets with string
-$.style(div:before).set({ prop: value, ... });
+// Multiple rule injection into document stylesheets with object
+$.style('div:before').set({ prop: value, ... });
 
 // Multiple rule injection into document stylesheets with string
-$.style(div:before { prop: value, ... } div:after { prop: value, ... } ...).set();
+$.style('div:before { prop: value, ... } div:after { prop: value, ... } ...').set();
 
 // Multiple rule injection into document stylesheets with string via array
-$.style([div:before { prop: value, ... }, div:after { prop: value, ... }]).set();
+$.style(['div:before { prop: value, ... }', 'div:after { prop: value, ... }']).set();
 
 // Inline rules
 $.style(target, optionalContext).set(style, value);
@@ -5355,7 +5355,7 @@ $(target).unmount(childElement);</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated  on Sun Apr 15 2018 22:54:25 GMT-0230 (NDT).
+    Documentation generated  on Sun Dec 02 2018 22:22:10 GMT-0330 (NST).
 </footer>
 
 <script>prettyPrint();</script>
