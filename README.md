@@ -7,6 +7,10 @@
 
 ---
 
+# Tricks for the DOM 
+
+Elemint is a fast, zero-dependency DOM library.
+ 
 #### Features
 
 - Traverse the DOM.
@@ -22,6 +26,34 @@
 - Include the library in the body of an HTML document:
 
 		<script src='path/to/elemint.js'>
+
+#### Support
+
+Modern desktop and mobile browsers versions are supported.
+
+- Chrome
+- Chromium
+- Edge
+- Firefox
+- Opera
+- Safari
+
+##### Cutting the mustard
+
+Under the hood, Elemint will check to see if the browser passes a feature test:
+
+```
+browser.supported =
+	browser.matches &&
+	browser.MutationObserver &&
+	browser.requestAnimationFrame;
+```
+
+If the above criteria are met then the browser should be supported.
+
+If you run into issues with browser compatibility, please filea bug report.
+
+[Reference](https://responsivenews.co.uk/post/18948466399/cutting-the-mustard)
 
 #### NPM Usage
 

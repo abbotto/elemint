@@ -1,10 +1,9 @@
-/* eslint-disable no-unused-vars, prefer-destructuring */
 const expect = chai.expect;
 const toArray = Function.prototype.call.bind(Array.prototype.slice);
 const toString = Function.prototype.call.bind(Object.prototype.toString);
 
 const camelize = function camelize(string) {
-	return string.replace(reCamelize, c => (c ? c.toUpperCase() : ''));
+	return string.replace(reCamelize, (c) => (c ? c.toUpperCase() : ''));
 };
 
 const getStyle = function getStyle(el, prop) {

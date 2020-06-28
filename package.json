@@ -1,7 +1,7 @@
 {
   "name": "@elemint/elemint",
   "description": "Tricks for the DOM",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "author": "Jared Abbott",
   "license": "MIT",
   "entrypoint": "elemint.js",
@@ -13,33 +13,50 @@
     "url": "https://github.com/abbotto/elemint.git"
   },
   "scripts": {
-    "build": "./tool/build.sh",
-    "doc": "./tool/doc.sh",
-    "lint": "./tool/lint.sh",
-    "start": "./tool/start.sh",
-    "test": "./tool/test.sh"
+    "build": "./ops/util/build.sh",
+    "doc": "./doc/util/doc.sh",
+    "format": "./dev/util/format.sh",
+    "lint": "./test/util/eslint.sh",
+    "start": "./ops/util/start.sh",
+    "test": "./test/util/spec.sh"
   },
   "dependencies": {},
   "devDependencies": {
     "chai": "4.2.0",
-    "docdash": "1.0.1",
-    "eslint": "5.9.0",
-    "eslint-config-airbnb": "17.1.0",
-    "eslint-config-airbnb-base": "13.1.0",
-    "eslint-plugin-disable": "1.0.3",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-json": "1.3.2",
-    "eslint-plugin-jsx-a11y": "6.1.2",
-    "eslint-plugin-react": "7.11.1",
-    "glob-concat": "1.0.1",
-    "jsdoc": "^3.6.3",
-    "karma": "^4.2.0",
+    "documentation": "^13.1.0",
+    "documentation-theme-light": "^1.1.1",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-disable": "^2.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-json": "^2.1.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-standard": "^4.1.0",
+    "glob-concat": "^1.0.2",
+    "husky": "^4.3.0",
+    "karma": "^5.2.3",
     "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-mocha": "1.3.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-mocha": "^2.0.1",
     "karma-spec-reporter": "0.0.32",
-    "lodash": "^4.17.15",
-    "mocha": "5.2.0",
+    "lint-staged": "^10.5.1",
+    "mocha": "^8.2.1",
+    "node-mapnik-theme": "0.0.3",
+    "prettier": "^2.1.2",
     "uglify-es": "3.3.9"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }

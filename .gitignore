@@ -2,27 +2,34 @@
 *
 
 # Whitelist files and directories
+!.editorconfig
 !.eslintrc.js
+!.prettierrc.js
 !.gitignore
 !.nvmrc
+!.pre-commit-config.yaml
 !.travis.yml
 !CONTRIBUTING.md
 !LICENSE.md
 !README.md
 !elemint.js
+!package-lock.json
 !package.json
+
+!/doc
+!/doc/**/*
 
 !/src
 !/src/**/*
 
-!/cfg
-!/cfg/**/*
-
 !/test
 !/test/**/*
 
-!/tool
-!/tool/**/*
+!/dev
+!/dev/**/*
+
+!/ops
+!/ops/**/*
 
 # Blacklist files and directories
 .DS_Store

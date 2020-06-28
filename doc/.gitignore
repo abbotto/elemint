@@ -1,0 +1,12 @@
+# Initialize Blacklist
+*
+
+# Whitelist files and directories
+
+!.gitignore
+
+!/config
+!/config/**/*
+
+!/util
+!/util/**/*

@@ -1,189 +1,155 @@
-(function (name, global, factory) {
-	if (typeof define === 'function' && define.amd) {
-		define([name], factory);
-	}
-	else if (typeof module !== 'undefined' && module.exports) {
-		module.exports = factory();
-	}
-	else {
-		global[name] = factory();
-	}
-}('elemint', window || this, function () {
-	var document = window.document;
-	var noop = function () {};
-	var wrapper = document.createElement('wrapper');
+(function (window) {
+	//=include util/browser.js
 
-	// Caching
-	var animations = {
-		cache: {}
+	// --------------------------------
+	// Utilities
+	// --------------------------------
+	//=include util/bind.js
+	//=include util/domStyle.js
+	//=include util/toString.js
+	//=include util/findMatch.js
+	//=include util/camelize.js
+	//=include util/isEvent.js
+	//=include util/isNode.js
+	//=include util/raf.js
+
+	// --------------------------------
+	// API
+	// --------------------------------
+	//=include api/animate/animate.set.js
+	//=include api/animate/animate.void.js
+	//=include api/class/class.set.js
+	//=include api/class/class.swap.js
+	//=include api/class/class.void.js
+	//=include api/event/event.emit.js
+	//=include api/event/event.set.js
+	//=include api/event/event.void.js
+	//=include api/layer/layer.get.js
+	//=include api/layer/layer.set.js
+	//=include api/offset/offset.get.js
+	//=include api/offset/offset.set.js
+	//=include api/prop/prop.get.js
+	//=include api/prop/prop.set.js
+	//=include api/prop/prop.test.js
+	//=include api/prop/prop.void.js
+	//=include api/size/size.get.js
+	//=include api/size/size.set.js
+	//=include api/style/style.get.js
+	//=include api/style/style.set.js
+	//=include api/watch/watch.set.js
+	//=include api/watch/watch.void.js
+	//=include api/after.js
+	//=include api/animate.js
+	//=include api/ascend.js
+	//=include api/before.js
+	//=include api/child.js
+	//=include api/class.js
+	//=include api/descend.js
+	//=include api/event.js
+	//=include api/fragment.js
+	//=include api/layer.js
+	//=include api/match.js
+	//=include api/mount.js
+	//=include api/offset.js
+	//=include api/parent.js
+	//=include api/position.js
+	//=include api/prop.js
+	//=include api/query.js
+	//=include api/ready.js
+	//=include api/render.js
+	//=include api/sibling.js
+	//=include api/size.js
+	//=include api/style.js
+	//=include api/unmount.js
+	//=include api/watch.js
+
+	/**
+	 * @namespace $
+	 * @param {String|Element|Object} selector Usually a CSS selector or element that will be targeted in the DOM.
+	 * Some methods will accept the `window` object if it is passed in.
+	 * @param {Document|Element} context An optional parent whose children will be queried.
+	 * @return {Object} The Elemint DOM library object.
+	 *
+	 * @description
+	 * A function that performs a DOM query or passes along the `window` object and returns chainable methods.
+	 *
+	 * @example
+	 * $(elementOrSelector)
+	 * $$(elementOrSelector)
+	 * elemint(elementOrSelector)
+	 */
+
+	// Elemint DOM query function
+	$$ = window.$$ = window.elemint = (selector, context) => {
+		$$.fn.context = context || document;
+		$$.fn.$ = selector !== window ? query(selector, $$.fn.context) : [selector];
+		$$.fn.selector = selector;
+
+		// eslint-disable-next-line new-cap
+		return new $$.fn();
 	};
-	var events = {
-		cache: {}
-	};
-	var queries = {
-		cache: {}
-	};
-	var timers = {
-		cache: {}
-	};
 
-	//=include helper/regex.js
-	//=include helper/throwError.js
-	//=include helper/browser.js
+	// All instances of '$$.fn' are functional instances of Elemint.
+	// Assigning '$$.fn' as the prototype allows `$$.fn.<plugin>` to be
+	// available on all Elemint objects.
+	$$.fn = $$.prototype = function $$fn() {};
+	$$.fn.prototype = $$.fn;
 
-	if (browser.supported) {
-		/* eslint-disable no-inner-declarations */
-		//=include helper/bind.js
-		//=include helper/toString.js
-		//=include helper/toArray.js
-		//=include helper/compatibility.js
-		//=include helper/findMatch.js
-		//=include helper/camelize.js
-		//=include helper/emitList.js
-		//=include helper/eventTest.js
-		//=include helper/flatten.js
-		//=include helper/interval.js
-		//=include helper/loop.js
-		//=include helper/merge.js
-		//=include helper/nodeCache.js
-		//=include helper/nodeTest.js
-		//=include helper/raf.js
-		//=include helper/styleDocument.js
-		//=include helper/styleValue.js
-		//=include helper/windowTest.js
-		//=include helper/chain.js
-
-		//=include method/after.js
-		//=include method/animate/animate.kill.js
-		//=include method/animate/animate.set.js
-		//=include method/animate.js
-		//=include method/ascend.js
-		//=include method/before.js
-		//=include method/child.js
-		//=include method/class/class.kill.js
-		//=include method/class/class.set.js
-		//=include method/class/class.sub.js
-		//=include method/class.js
-		//=include method/descend.js
-		//=include method/event/event.emit.js
-		//=include method/event/event.kill.js
-		//=include method/event/event.set.js
-		//=include method/event.js
-		//=include method/fragment.js
-		//=include method/layer/layer.get.js
-		//=include method/layer/layer.set.js
-		//=include method/layer.js
-		//=include method/match.js
-		//=include method/mount.js
-		//=include method/offset/offset.get.js
-		//=include method/offset/offset.set.js
-		//=include method/offset.js
-		//=include method/parent.js
-		//=include method/position.js
-		//=include method/prop/prop.get.js
-		//=include method/prop/prop.kill.js
-		//=include method/prop/prop.set.js
-		//=include method/prop.js
-		//=include method/query.js
-		//=include method/ready.js
-		//=include method/render.js
-		//=include method/sibling.js
-		//=include method/size/size.get.js
-		//=include method/size/size.set.js
-		//=include method/size.js
-		//=include method/style/style.get.js
-		//=include method/style/style.set.js
-		//=include method/style.js
-		//=include method/unmount.js
-
-		/**
-		 * @namespace $
-		 * @param {String} target A CSS selector or element that will be targeted in the DOM.
-		 * @param {Document|Element} context An optional parent whose children will be queried.
-		 * @return {Object} The Elemint DOM library object.
-		 *
-		 * @description
-		 * A function that returns the following chainable methods.
-		 * - after
-		 * - ascend
-		 * - before
-		 * - child
-		 * - class (kill, set, sub)
-		 * - descend
-		 * - event (emit, kill, set)
-		 * - layer
-		 * - match
-		 * - mount
-		 * - offset
-		 * - parent
-		 * - position
-		 * - prop (get, kill, set)
-		 * - sibling
-		 * - size (get, set)
-		 * - style (get, set)
-		 * - unmount
-		 *
-		 * @example
-		 * $(elementOrSelector)
-		 * $$(elementOrSelector)
-		 * elemint(elementOrSelector)
-		*/
-		$$ = (function () {
-			$$ = function (selector, context, opt) {
-				new $$.fn.init(selector, context, opt);
-				return chain();
-			};
-
-			// Build the $$ object
-			$$.fn = $$.prototype = {
-				constructor: $$,
-				context: document,
-				selector: '',
-				$: [],
-				init: function (selector, context) {
-					$$.fn.context = context;
-					$$.fn.selector = selector;
-					$$.fn.$ = query(selector, context);
-				}
-			};
-
-			// Pass 'init' the $$ prototype for later instantiation
-			$$.fn.init.prototype = $$.fn;
-
-			// Return the Elemint object
-			// Set window.$ only if $ is undefined
-			return (!window.$)
-				? window.elemint = window.$$ = window.$ = $$
-				: window.elemint = window.$$ = $$
-			;
-		}());
-
-		$$.after = after;
-		$$.animate = animate;
-		$$.ascend = ascend;
-		$$.before = before;
-		$$.child = child;
-		$$.class = classes;
-		$$.descend = descend;
-		$$.event = event;
-		$$.fragment = fragment;
-		$$.layer = layer;
-		$$.match = match;
-		$$.mount = mount;
-		$$.offset = offset;
-		$$.parent = parent;
-		$$.position = position;
-		$$.prop = prop;
-		$$.query = $$.$ = query;
-		$$.ready = ready;
-		$$.render = render;
-		$$.sibling = sibling;
-		$$.size = size;
-		$$.style = style;
-		$$.unmount = unmount;
-
-		return $$;
+	// Prevent '$' name conflicts with other libraries
+	if (!window.$) {
+		window.$ = $$;
 	}
 
-	throwError(browser.unsupported);
-}));
+	// Create an exportable module in a NodeJS environment
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = $$;
+	}
+
+	// Chained API
+	$$.fn.after = $$after;
+	$$.fn.ascend = $$ascend;
+	$$.fn.before = $$before;
+	$$.fn.child = $$child;
+	$$.fn.class = $$class;
+	$$.fn.descend = $$descend;
+	$$.fn.event = $$event;
+	$$.fn.layer = $$layer;
+	$$.fn.match = $$match;
+	$$.fn.mount = $$mount;
+	$$.fn.offset = $$offset;
+	$$.fn.parent = $$parent;
+	$$.fn.position = $$position;
+	$$.fn.prop = $$prop;
+	$$.fn.sibling = $$sibling;
+	$$.fn.size = $$size;
+	$$.fn.style = $$style;
+	$$.fn.unmount = $$unmount;
+
+	// Unchained API
+	$$.after = after;
+	$$.animate = animate;
+	$$.ascend = ascend;
+	$$.before = before;
+	$$.child = child;
+	$$.class = classes;
+	$$.descend = descend;
+	$$.event = event;
+	$$.fragment = fragment;
+	$$.layer = layer;
+	$$.match = match;
+	$$.mount = mount;
+	$$.offset = offset;
+	$$.parent = parent;
+	$$.position = position;
+	$$.prop = prop;
+	$$.query = $$.$ = query;
+	$$.ready = ready;
+	$$.render = render;
+	$$.sibling = sibling;
+	$$.size = size;
+	$$.style = style;
+	$$.unmount = unmount;
+	$$.watch = watch;
+
+	return $$;
+})(globalThis || global || window);
