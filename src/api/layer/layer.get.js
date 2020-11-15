@@ -11,6 +11,7 @@
  * $.layer(target).get();
  * $(target).layer.get()
  */
+
 function layerGet() {
 	const subject = this;
 

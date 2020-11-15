@@ -33,6 +33,6 @@ function parent(subject, offsetParent) {
 	return result;
 }
 
-$$parent = function chainParent(offsetParent) {
-	return $$(parent(this.$, offsetParent));
+const $parent = function chainParent(offsetParent) {
+	return elemint(parent(this.$, offsetParent));
 };

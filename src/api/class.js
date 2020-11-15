@@ -24,17 +24,17 @@ function classes(subject) {
 	};
 }
 
-$$class = {
-	set: function chainClassSet(classList) {
-		classes($$.fn.$).set(classList);
-		return $$.fn;
+const $class = {
+	set: function chainClassSet(...classNames) {
+		classes(elemint.fn.$).set(...classNames);
+		return elemint.fn;
 	},
 	swap: function chainClassSwap(classA, classB) {
-		classes($$.fn.$).swap(classA, classB);
-		return $$.fn;
+		classes(elemint.fn.$).swap(classA, classB);
+		return elemint.fn;
 	},
-	void: function chainClassVoid(classList) {
-		classes($$.fn.$).void(classList);
-		return $$.fn;
+	void: function chainClassVoid(...classNames) {
+		classes(elemint.fn.$).void(...classNames);
+		return elemint.fn;
 	}
 };

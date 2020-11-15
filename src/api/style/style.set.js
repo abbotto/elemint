@@ -22,49 +22,54 @@
  * $.style(['div:before { prop: value, ... }', 'div:after { prop: value, ... }']).set();
  *
  * // Inline rules
- * $.style(target, optionalContext).set(style, value);
- * $.style(target, optionalContext).set({ prop: value, ... });
- * $(target).style.set(style, value, optionalContext);
- * $(target).style.set({ prop: value, ... }, optionalContext);
+ * $.style(target).set(style, value);
+ * $.style(target).set({ prop: value, ... });
+ * $(target).style.set(style, value);
+ * $(target).style.set({ prop: value, ... });
  */
 
-function styleSet(css, opt) {
+function styleSet(css, value) {
 	const args = this;
-	let subject = args[0];
 	const len = args[1];
+	const context = args[2];
+
+	let subject = args[0];
 	let styles = '';
-	let i;
+	let i = len;
 
 	// Insert the new rules into a stylesheet
 	if (subject && subject[0] && subject[0].substring) {
+		styleModel(context || document);
+
 		if (toString(subject) === '[object Array]') {
 			i = 0;
 
 			while (i < len) {
-				$style.sheet.insertRule(subject[i], $style.sheet.cssRules.length);
+				styleModel.sheet.insertRule(subject[i], styleModel.sheet.cssRules.length);
 				i += 1;
 			}
 		}
 		// Single rule
-		else if (opt && opt.substring) {
-			subject += ' { ' + css + ':' + opt + '; }';
-			$style.sheet.insertRule(subject, $style.sheet.cssRules.length);
+		else if (value && value.substring) {
+			subject += ' { ' + css + ':' + value + '; }';
+			styleModel.sheet.insertRule(subject, styleModel.sheet.cssRules.length);
 		}
 		// Multiple rules contained in an object
 		else if (toString(css) === '[object Object]') {
 			for (prop in css) {
 				if (css.hasOwnProperty(prop)) {
-					styles +=
-						prop + ':' + prop === 'content'
-							? "'" + css[prop] + "';"
-							: css[prop] + ';';
+					if (prop === 'content') {
+						css[prop] = "'" + css[prop] + "';";
+					}
+
+					styles += prop + ':' + css[prop] + ';';
 				}
 			}
 			subject += ' { ' + styles + ' }';
-			$style.sheet.insertRule(subject, $style.sheet.cssRules.length);
+			styleModel.sheet.insertRule(subject, styleModel.sheet.cssRules.length);
 		} else if (subject.substring) {
 			// Inject a stylesheet
-			$style.element.appendChild($style.context.createTextNode(subject));
+			styleModel.element.appendChild(styleModel.context.createTextNode(subject));
 		}
 	}
 	// Apply the new rules inline on the selected elements
@@ -72,8 +77,10 @@ function styleSet(css, opt) {
 		let key;
 
 		// Single CSS style
-		if (css && css.substring && opt) {
-			while (i--) subject[i].style[css] = opt;
+		if (css && css.substring && value) {
+			while (i--) {
+				subject[i].style[css] = value;
+			}
 		}
 
 		// Loop through CSS object containing multiple styles and set them on each element

@@ -41,6 +41,6 @@ function child(subject, selector) {
 	return result;
 }
 
-$$child = function chainChild(selector) {
-	return $$(child(this.$, selector));
+const $child = function chainChild(selector) {
+	return elemint(child(this.$, selector));
 };

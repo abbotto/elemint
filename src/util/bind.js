@@ -8,7 +8,7 @@
  */
 
 function bind(fn, context) {
-	return function fnApply() {
-		return fn.apply(context, arguments);
+	return function bindFnApply(...args) {
+		return fn.apply(context, args);
 	};
 }

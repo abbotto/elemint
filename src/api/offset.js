@@ -23,12 +23,12 @@ function offset(subject) {
 	};
 }
 
-$$offset = {
-	get: function chainOffsetGet() {
-		return offset($$.fn.$).get();
+const $offset = {
+	get: function chainOffsetGet(offsetParent) {
+		return offset(elemint.fn.$).get(offsetParent);
 	},
 	set: function chainOfsetSet(config) {
-		offset($$.fn.$).set(config);
-		return $$.fn;
+		offset(elemint.fn.$).set(config);
+		return elemint.fn;
 	}
 };

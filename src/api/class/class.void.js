@@ -5,18 +5,19 @@
  * @memberof $
  * @method class.void
  *
- * @param {String} classes The classnames to be disabled.
+ * @param {String} classes The classclassNames to be disabled.
  *
  * @example
  * $.class(target).void(classA, classB, classN, ...);
  * $(target).class.void(classA, classB, classN, ...);
  */
-function classVoid(...names) {
+
+function classVoid(...classNames) {
 	let n;
 	let index;
-	let cNames;
+	let names;
 
-	const namesLen = names.length;
+	const classNamesLen = classNames.length;
 	const args = this;
 	const subject = args[0];
 
@@ -24,15 +25,18 @@ function classVoid(...names) {
 
 	while (i--) {
 		if (subject[i].className) {
-			n = namesLen;
-			cNames = subject[i].className.split(' ');
+			n = classNamesLen;
+			names = subject[i].className.split(' ');
 
 			while (n--) {
-				index = cNames.indexOf(names[n]);
-				index > -1 && cNames.splice(index, 1);
+				index = names.indexOf(classNames[n]);
+
+				if (index > -1) {
+					names.splice(index, 1);
+				}
 			}
 
-			subject[i].className = cNames.join(' ');
+			subject[i].className = names.join(' ');
 		}
 	}
 }

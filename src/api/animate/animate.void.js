@@ -10,6 +10,7 @@
  * @example
  * $.animate.void(tag);
  */
+
 function animateVoid(tag) {
 	// Cancel the animation using it's reference name
 	window.cancelAnimationFrame(animations.job[tag]);

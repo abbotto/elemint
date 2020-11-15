@@ -1,4 +1,5 @@
 default_stages: [commit, manual]
+fail_fast: false
 
 repos:
   - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
@@ -16,33 +17,60 @@ repos:
       - id: check-added-large-files
       - id: check-case-conflict
       - id: check-merge-conflict
+      - id: end-of-file-fixer
       - id: check-json
       - id: check-yaml
-      - id: end-of-file-fixer
 
-  - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v7.13.0-1
+  - repo: local
+    hooks:
+      - id: format
+        args: [
+          '-c',
+          '.eslintrc.js',
+          '--fix',
+          '--ignore-pattern=!.eslintrc.js',
+          './dev',
+          './ops',
+          './src',
+          './test'
+        ]
+        entry: eslint
+        files: \.js(on)?$
+        language: node
+        name: Formatting files
+        pass_filenames: false
+
+  - repo: local
     hooks:
       - id: eslint
-          additional_dependencies:
-            - eslint@^7.13.0-1
-            - eslint-config-airbnb@^18.2.1
-            - eslint-config-standard@^14.1.1
-            - eslint-plugin-disable@^2.0.1
-            - eslint-plugin-import@^2.22.1
-            - eslint-plugin-json@^2.1.2
-            - eslint-plugin-jsx-a11y@^6.4.1
-            - eslint-plugin-node@^11.1.0
-            - eslint-plugin-promise@^4.2.1
-            - eslint-plugin-react@^7.21.5
-            - eslint-plugin-standard@^4.1.0
+        args: [
+          '-c',
+          '.eslintrc.js',
+          '--ignore-pattern=!.eslintrc.js',
+          './dev',
+          './ops',
+          './src',
+          './test'
+        ]
+        entry: eslint
+        files: \.js(on)?$
+        language: node
+        name: Linting JS files
+        pass_filenames: false
 
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 2.1.4
     hooks:
       - id: shellcheck
+        name: Linting SH files
 
-  - repo: https://github.com/prettier/prettier
-    rev: "2.1.2"
+  - repo: local
     hooks:
-      - id: prettier
+      - id: test
+        entry: /bin/sh -c
+        args: [
+          "rm -f elemint.dev.js; NODE_ENV=test node ops/util/include.js; karma start test/config/karma.js"
+        ]
+        language: node
+        name: Running tests
+        pass_filenames: false

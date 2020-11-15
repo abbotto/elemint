@@ -1,12 +1,13 @@
-# Initialize Blacklist
 *
+!**/
 
-# Whitelist files and directories
-
+# Allow
 !.gitignore
 
-!/config
+!/assets/images/**/*
 !/config/**/*
-
-!/util
+!/read/**/*
 !/util/**/*
+
+# Deny
+index.html

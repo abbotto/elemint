@@ -5,15 +5,22 @@ set -eu
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-if command -v pre-commit >/dev/null 2>&1; then
-    printf '%s\n' "${bold}> Formatting code with 'pre-commit' hooks | https://pre-commit.com/${normal}"
+printf '%s\n' "${bold}> Formatting code${normal}"
 
-    printf '\n%s\n' "${bold}> Ensuring that each file is either empty, or ends with one newline${normal}"
-    pre-commit run end-of-file-fixer --all-files --verbose
-
-    printf '\n%s\n' "${bold}> Formatting 'py' files with Black | https://github.com/psf/black${normal}"
-    pre-commit run prettier --all-files --verbose
-else
-    printf '%s\n' "${bold}> 'pre-commit' not found - https://pre-commit.com/${normal}"
+if ! command -v eslint >/dev/null 2>&1; then
+    printf '%s\n' "${bold}> 'eslint' not found - https://eslint.org/${normal}"
 	printf '%s\n' "${bold}> Skipping code fomatting${normal}"
+    exit 127
 fi
+
+if ! command -v prettier >/dev/null 2>&1; then
+    printf '%s\n' "${bold}> 'prettier' not found - https://prettier.io/${normal}"
+	printf '%s\n' "${bold}> Skipping code fomatting${normal}"
+    exit 127
+fi
+
+printf '%s\n' "${bold}> Running 'eslint' and 'prettier'"
+printf '%s\n' "${bold}  - https://eslint.org/${normal}"
+printf '%s\n' "${bold}  - https://prettier.io/${normal}"
+
+eslint -c .eslintrc.js --fix ./src ./test ./ops

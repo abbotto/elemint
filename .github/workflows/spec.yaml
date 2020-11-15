@@ -1,0 +1,24 @@
+name: Spec
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Run the 'karma' testrunner
+      env:
+        NODE_ENV: test
+        CI: true
+      run: |
+        npm ci; node ops/util/include.js; $(npm bin)/karma start test/config/karma.js

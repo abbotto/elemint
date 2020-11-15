@@ -12,6 +12,7 @@
  * $.event(target).void('tag');
  * $(target).event.void('eventName', callback);
  */
+
 function eventVoid(tagOrEventName, callback) {
 	const args = this;
 	const subject = args[0];

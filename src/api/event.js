@@ -46,27 +46,30 @@ function event(subject) {
 		set: bind(eventSet, [subject, i])
 	};
 
-	const emitter = function () {
+	const emitter = function emitterCall() {
 		this[0].call(subject, this[1]);
 	};
 
 	let n = emitList.length;
-	while (n--) methods[emitList[n]] = bind(emitter, [methods.emit, emitList[n]]);
+
+	while (n--) {
+		methods[emitList[n]] = bind(emitter, [methods.emit, emitList[n]]);
+	}
 
 	return methods;
 }
 
-$$event = {
+const $event = {
 	emit: function chainEventEmit(eventName, config) {
-		event($$.fn.$).emit(eventName, config);
-		return $$.fn;
+		event(elemint.fn.$).emit(eventName, config);
+		return elemint.fn;
 	},
 	set: function chainEventSet(config) {
-		event($$.fn.$).set(config);
-		return $$.fn;
+		event(elemint.fn.$).set(config);
+		return elemint.fn;
 	},
 	void: function chainEventVoid(eventId, callback) {
-		event($$.fn.$).void(eventId, callback);
-		return $$.fn;
+		event(elemint.fn.$).void(eventId, callback);
+		return elemint.fn;
 	}
 };

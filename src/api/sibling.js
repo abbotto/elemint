@@ -40,8 +40,8 @@ function sibling(subject, selector) {
 	return result.length > 1 ? result : result[0];
 }
 
-$$sibling = function chainSibling(selector) {
+const $sibling = function chainSibling(selector) {
 	let result = sibling(this.$, selector);
 	result = result.length > 1 ? result : [result];
-	return $$(result);
+	return elemint(result);
 };

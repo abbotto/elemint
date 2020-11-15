@@ -1,35 +1,29 @@
-# Initialize Blacklist
 *
+!**/
 
-# Whitelist files and directories
+# Allow
 !.editorconfig
 !.eslintrc.js
-!.prettierrc.js
 !.gitignore
 !.nvmrc
 !.pre-commit-config.yaml
+!.prettierrc.js
 !.travis.yml
+!CODE_OF_CONDUCT.md
 !CONTRIBUTING.md
-!LICENSE.md
-!README.md
 !elemint.js
+!LICENSE
 !package-lock.json
 !package.json
+!README.md
 
-!/doc
+!.github/**/*
+!/dev/**/*
 !/doc/**/*
-
-!/src
+!/ops/**/*
 !/src/**/*
-
-!/test
 !/test/**/*
 
-!/dev
-!/dev/**/*
-
-!/ops
-!/ops/**/*
-
-# Blacklist files and directories
+# Deny
 .DS_Store
+/node_modules

@@ -37,6 +37,6 @@ function before(subject, selector) {
 	return result;
 }
 
-$$before = function chainBefore(selector) {
-	return $$(before(this.$, selector));
+const $before = function chainBefore(selector) {
+	return elemint(before(this.$, selector));
 };

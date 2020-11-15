@@ -1,17 +1,16 @@
 (function (window) {
-	//=include util/browser.js
-
 	// --------------------------------
 	// Utilities
 	// --------------------------------
+	//=include util/browser.js
 	//=include util/bind.js
-	//=include util/domStyle.js
+	//=include util/styleValue.js
 	//=include util/toString.js
 	//=include util/findMatch.js
 	//=include util/camelize.js
 	//=include util/isEvent.js
 	//=include util/isNode.js
-	//=include util/raf.js
+	//=include util/styleModel.js
 
 	// --------------------------------
 	// API
@@ -52,7 +51,6 @@
 	//=include api/mount.js
 	//=include api/offset.js
 	//=include api/parent.js
-	//=include api/position.js
 	//=include api/prop.js
 	//=include api/query.js
 	//=include api/ready.js
@@ -75,81 +73,83 @@
 	 *
 	 * @example
 	 * $(elementOrSelector)
-	 * $$(elementOrSelector)
 	 * elemint(elementOrSelector)
 	 */
 
 	// Elemint DOM query function
-	$$ = window.$$ = window.elemint = (selector, context) => {
-		$$.fn.context = context || document;
-		$$.fn.$ = selector !== window ? query(selector, $$.fn.context) : [selector];
-		$$.fn.selector = selector;
+	window.elemint = (selector, context) => {
+		elemint.fn.context = context || document;
+		elemint.fn.$ =
+			selector !== window ? query(selector, elemint.fn.context) : [selector];
+		elemint.fn.selector = selector;
 
 		// eslint-disable-next-line new-cap
-		return new $$.fn();
+		return new elemint.fn();
 	};
 
-	// All instances of '$$.fn' are functional instances of Elemint.
-	// Assigning '$$.fn' as the prototype allows `$$.fn.<plugin>` to be
+	// All instances of 'elemint.fn' are functional instances of Elemint.
+	// Assigning 'elemint.fn' as the prototype allows `elemint.fn.<method>` to be
 	// available on all Elemint objects.
-	$$.fn = $$.prototype = function $$fn() {};
-	$$.fn.prototype = $$.fn;
+	elemint.fn = elemint.prototype = function $fn() {};
+	elemint.fn.prototype = elemint.fn;
+
+	//=include api/plugin.js
 
 	// Prevent '$' name conflicts with other libraries
 	if (!window.$) {
-		window.$ = $$;
+		window.$ = elemint;
 	}
 
 	// Create an exportable module in a NodeJS environment
 	if (typeof module !== 'undefined' && module.exports) {
-		module.exports = $$;
+		module.exports = elemint;
 	}
 
 	// Chained API
-	$$.fn.after = $$after;
-	$$.fn.ascend = $$ascend;
-	$$.fn.before = $$before;
-	$$.fn.child = $$child;
-	$$.fn.class = $$class;
-	$$.fn.descend = $$descend;
-	$$.fn.event = $$event;
-	$$.fn.layer = $$layer;
-	$$.fn.match = $$match;
-	$$.fn.mount = $$mount;
-	$$.fn.offset = $$offset;
-	$$.fn.parent = $$parent;
-	$$.fn.position = $$position;
-	$$.fn.prop = $$prop;
-	$$.fn.sibling = $$sibling;
-	$$.fn.size = $$size;
-	$$.fn.style = $$style;
-	$$.fn.unmount = $$unmount;
+	elemint.fn.after = $after;
+	elemint.fn.ascend = $ascend;
+	elemint.fn.before = $before;
+	elemint.fn.child = $child;
+	elemint.fn.class = $class;
+	elemint.fn.descend = $descend;
+	elemint.fn.event = $event;
+	elemint.fn.layer = $layer;
+	elemint.fn.match = $match;
+	elemint.fn.mount = $mount;
+	elemint.fn.offset = $offset;
+	elemint.fn.parent = $parent;
+	elemint.fn.prop = $prop;
+	elemint.fn.sibling = $sibling;
+	elemint.fn.size = $size;
+	elemint.fn.style = $style;
+	elemint.fn.unmount = $unmount;
 
 	// Unchained API
-	$$.after = after;
-	$$.animate = animate;
-	$$.ascend = ascend;
-	$$.before = before;
-	$$.child = child;
-	$$.class = classes;
-	$$.descend = descend;
-	$$.event = event;
-	$$.fragment = fragment;
-	$$.layer = layer;
-	$$.match = match;
-	$$.mount = mount;
-	$$.offset = offset;
-	$$.parent = parent;
-	$$.position = position;
-	$$.prop = prop;
-	$$.query = $$.$ = query;
-	$$.ready = ready;
-	$$.render = render;
-	$$.sibling = sibling;
-	$$.size = size;
-	$$.style = style;
-	$$.unmount = unmount;
-	$$.watch = watch;
+	elemint.after = after;
+	elemint.animate = animate;
+	elemint.ascend = ascend;
+	elemint.before = before;
+	elemint.child = child;
+	elemint.class = classes;
+	elemint.descend = descend;
+	elemint.event = event;
+	elemint.fragment = fragment;
+	elemint.layer = layer;
+	elemint.match = match;
+	elemint.mount = mount;
+	elemint.offset = offset;
+	elemint.parent = parent;
+	elemint.prop = prop;
+	elemint.query = elemint.$ = query;
+	elemint.ready = ready;
+	elemint.render = render;
+	elemint.sibling = sibling;
+	elemint.size = size;
+	elemint.style = style;
+	elemint.unmount = unmount;
+	elemint.watch = watch;
 
-	return $$;
-})(globalThis || global || window);
+	//=include version
+
+	return elemint;
+})(window || global || globalThis);

@@ -14,10 +14,14 @@
  * @param {Boolean} config.characterDataOldValue Record the previous value of a node's text whenever the text changes on nodes being monitored.
  * @param {Boolean} config.childList Monitor the target node (and, if subtree is true, its descendants) for the addition of new child nodes or removal of existing child nodes. The default is `false`.
  * @param {Boolean} config.subtree Watch the entire subtree of nodes rooted at `target`. The other config properties are applied to the subtree nodes instead of only the target node. The default value is `false`.
- * @param {Function} callback A callback function.
+ * @param {Function} callback A callback function .
  *
  * @example
- * $.watch(target).set('tagName', { data: ... }, function callback() { ... });
+ * $.watch(target).set(
+ *     'tagName',
+ *     { data: ... },
+ *     function callback(mutations, observer) { ... }
+ * );
  */
 
 const watchers = {
@@ -27,12 +31,12 @@ const watchers = {
 function watchSet(tag, config, callback) {
 	const context = this || document;
 
-	const mutation = new window.MutationObserver((e) => {
-		callback(e);
-		return e;
+	const observer = new MutationObserver((mutations) => {
+		callback(mutations, observer);
+		return mutations;
 	});
 
-	watchers.job[tag] = mutation;
+	watchers.job[tag] = observer;
 
-	mutation.observe(context, config);
+	observer.observe(context, config);
 }

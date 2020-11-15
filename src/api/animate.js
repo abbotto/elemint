@@ -11,6 +11,7 @@
  * @example
  * $.animate;
  */
+
 const animate = {
 	set: animateSet,
 	void: animateVoid

@@ -1,32 +1,40 @@
 #!/usr/bin/env sh
 
-# Cleanup
-rm -f elemint.js
+set -eu
 
-# Include scripts
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+printf '%s\n' "${bold}> Building 'elemint.js'${normal}"
+
+if ! command -v uglifyjs >/dev/null 2>&1; then
+    printf '%s\n' "${bold}> 'uglifyjs' not found - https://github.com/mishoo/UglifyJS/${normal}"
+	printf '%s\n' "${bold}> Skipping code fomatting${normal}"
+    exit 127
+fi
+
+rm -rf ./elemint.js
+
 node ops/util/include.js
 
-# This is a `dist` build
-if [ "$1" != "test" ]; then
-	# Minify the build
-	node_modules/.bin/uglifyjs --config-file ops/config/uglify.config.json \
-	elemint.js > elemint.min.js
+printf '%s\n' "${bold}> Minifying code with 'uglifyjs'${normal}"
+printf '%s\n' "${bold}  - https://github.com/mishoo/UglifyJS/${normal}"
 
-	CONTENT=$(cat elemint.min.js)
-	rm -rf elemint.js elemint.min.js
+# shellcheck disable=SC2094,SC2002
+cat elemint.js | uglifyjs --verbose --config-file ops/config/uglify.config.json -o elemint.js
 
-	# Prepend package information to the distribution
-	PACKAGE_JSON="require('./package.json')"
-	YEAR=$(date +"%Y")
-	AUTHOR="$(node -p -e ${PACKAGE_JSON}.author)"
-	COPYRIGHT="${YEAR} ${AUTHOR}"
-	NAME="$(node -p -e ${PACKAGE_JSON}.name)"
-	DESCRIPTION="$(node -p -e ${PACKAGE_JSON}.description)"
-	LICENSE="$(node -p -e ${PACKAGE_JSON}.license)"
-	VERSION="$(node -p -e ${PACKAGE_JSON}.version)"
+# Prepend package information to the distribution
+package_json="require('./package.json')"
+year=$(date +"%Y")
+author="$(node -p -e ${package_json}.author)"
+copyright="2018-${year} ${author}"
+name="$(node -p -e ${package_json}.name)"
+description="$(node -p -e ${package_json}.description)"
+license="$(node -p -e ${package_json}.license)"
+version="$(node -p -e ${package_json}.version)"
 
-	echo "// ${NAME} v${VERSION} | ${DESCRIPTION}" > elemint.js
-	echo "// Copyright (c) ${COPYRIGHT}" >> elemint.js
-	echo "// Distributed under the ${LICENSE} license" >> elemint.js
-	echo "${CONTENT}" >> elemint.js
-fi
+pkg_info="// ${name} v${version} | ${description}\n"
+pkg_info="${pkg_info}// Copyright (c) ${copyright}\n"
+pkg_info="${pkg_info}// Distributed under the ${license} license\n"
+
+echo "${pkg_info}$(cat elemint.js)" > elemint.js

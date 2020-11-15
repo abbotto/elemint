@@ -23,12 +23,12 @@ function size(subject) {
 	};
 }
 
-$$size = {
+const $size = {
 	get: function chainSizeGet(heightOrWidth) {
-		return size($$.fn.$).get(heightOrWidth);
+		return size(elemint.fn.$).get(heightOrWidth);
 	},
 	set: function chainSizeSet(config) {
-		size($$.fn.$).set(config);
-		return $$.fn;
+		size(elemint.fn.$).set(config);
+		return elemint.fn;
 	}
 };

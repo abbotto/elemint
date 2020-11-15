@@ -27,12 +27,12 @@ function layer(subject) {
 	throw new Error('Not an element');
 }
 
-$$layer = {
+const $layer = {
 	get: function chainLayerGet() {
-		return layer($$.fn.$).get();
+		return layer(elemint.fn.$).get();
 	},
 	set: function chainLayerSet(zIndex) {
-		layer($$.fn.$).set(zIndex);
-		return $$.fn;
+		layer(elemint.fn.$).set(zIndex);
+		return elemint.fn;
 	}
 };

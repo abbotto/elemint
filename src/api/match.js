@@ -30,6 +30,6 @@ function match(subject, selector, callback) {
 		  });
 }
 
-$$match = function chainMatch(selector, callback) {
-	return $$(match(this.$, selector, callback));
+const $match = function chainMatch(selector, callback) {
+	return elemint(match(this.$, selector, callback));
 };

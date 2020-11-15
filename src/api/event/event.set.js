@@ -23,7 +23,7 @@
  * $(target).event.set(evt, callback);
  */
 
-const mouseTouchMap = {
+const tactileMap = {
 	mousedown: 'onmousedown' in window ? 'mousedown' : 'touchstart',
 	mousemove: 'onmousemove' in window ? 'mousemove' : 'touchmove',
 	mouseout: 'onmouseout' in window ? 'mouseout' : 'touchcancel',
@@ -39,7 +39,7 @@ function eventSet(config, cb) {
 	const subject = args[0];
 	let i = args[1];
 
-	const evt = config.on ? mouseTouchMap[config.on] || config.on : config;
+	const evt = config.on ? tactileMap[config.on] || config.on : config;
 
 	if (config.on) {
 		const tag = config.tag;

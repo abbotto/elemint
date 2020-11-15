@@ -15,6 +15,6 @@ var supportedBrowser =
 // Cut the mustard test
 if (!supportedBrowser) {
 	throw new Error(
-		'Your browser is unsupported - consider upgrading to the latest version.'
+		'Unsupported browser - consider upgrading to the latest version.'
 	);
 }

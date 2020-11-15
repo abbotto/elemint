@@ -36,4 +36,22 @@ describe('$.offset', () => {
 			expect(expectedOffset).eql($(element).offset.get());
 		});
 	});
+
+	describe('$.offset.get (parent)', () => {
+		it('should throw an error if the elements position isn\'t returned via the "elemint" object', () => {
+			document.body.innerHTML =
+				'<div id="myDiv" style="position: fixed; top: 100px; left: 100px;">myDiv</div>';
+			const myDiv = document.getElementById('myDiv');
+			const position = $.offset(myDiv).get(true);
+			expect(position.left + position.top).eql(200);
+		});
+
+		it('should throw an error if the elements position isn\'t returned via the "elemint" function', () => {
+			document.body.innerHTML =
+				'<div id="myDiv" style="position: fixed; top: 100px; left: 100px;">myDiv</div>';
+			const myDiv = document.getElementById('myDiv');
+			const position = $(myDiv).offset.get(true);
+			expect(position.left + position.top).eql(200);
+		});
+	});
 });

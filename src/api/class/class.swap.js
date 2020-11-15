@@ -12,24 +12,25 @@
  * $.class(target).swap('classA', 'classB');
  * $(target).class.swap('classA', 'classB');
  */
+
 function classSwap(classA, classB) {
 	let index;
-	let cNames;
+	let names;
 
 	const args = this;
 	const subject = args[0];
 	let i = args[1];
 
 	while (i--) {
-		cNames = subject[i].className ? subject[i].className.split(' ') : [];
+		names = subject[i].className ? subject[i].className.split(' ') : [];
 
-		if (cNames.length) {
-			index = cNames.indexOf(classA);
-			index > -1 && (cNames[index] = classB);
+		if (names.length) {
+			index = names.indexOf(classA);
+			index > -1 && (names[index] = classB);
 		} else {
-			cNames.push(classA);
+			names.push(classA);
 		}
 
-		subject[i].className = cNames.join(' ');
+		subject[i].className = names.join(' ');
 	}
 }

@@ -11,10 +11,12 @@
  * $.layer(target).set(newIndex);
  * $(target).layer.set(newIndex)
  */
+
 function layerSet(newIndex) {
 	const args = this;
 	const subject = args[0];
 	let i = args[1];
 
 	while (i--) subject[i].style['z-index'] = newIndex;
+	return parseInt(newIndex, 10);
 }

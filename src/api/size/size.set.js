@@ -12,6 +12,7 @@
  * $.size(target).set(config);
  * $(target).size.set(config);
  */
+
 function sizeSet(config) {
 	let key;
 	const args = this;

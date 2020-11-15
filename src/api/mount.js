@@ -8,10 +8,10 @@
  * - Will default to mounting the selected element(s) in `document.body` if no other arguments are passed.
  *     - after: Append a sibling after the subject
  *     - before: Append a sibling before the subject
- *     - innerBegin: Append a new "firstChild" within the subject
- *     - innerEnd: Append a new "lastChild" within the subject
- *     - outerBegin: Append a new "firstChild" sibling within the subject's parent
- *     - outerEnd: Append a new "lastChild" sibling within the subject's parent
+ *     - innerBegin: Append a new `firstChild` within the subject
+ *     - innerEnd: Append a new `lastChild` within the subject
+ *     - outerBegin: Append a new `firstChild` sibling within the subject's parent
+ *     - outerEnd: Append a new `lastChild` sibling within the subject's parent
  *
  * @param {Element|Fragment} target The point of reference for the mount location.
  * @param {Array|Element|Fragment|String|Undefined} locationOrPayload
@@ -95,7 +95,7 @@ function mount(subject, mountpoint, payload) {
 	}
 }
 
-$$mount = function chainMount(position, payload) {
+const $mount = function chainMount(position, payload) {
 	mount(this.$, position, payload);
 	return this;
 };

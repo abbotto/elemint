@@ -13,6 +13,7 @@
  * $.after(target, optionalSelector);
  * $(target).after(optionalSelector);
  */
+
 function after(subject, selector) {
 	const result = [];
 
@@ -42,6 +43,6 @@ function after(subject, selector) {
 	return result;
 }
 
-$$after = function chainAfter(selector) {
-	return $$(after(this.$, selector));
+const $after = function chainAfter(selector) {
+	return elemint(after(this.$, selector));
 };

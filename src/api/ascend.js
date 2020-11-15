@@ -48,6 +48,6 @@ function ascend(subject, selector, limit) {
 	return collector;
 }
 
-$$ascend = function chainAscend(selector, limit) {
-	return $$(ascend(this.$, selector, limit));
+const $ascend = function chainAscend(selector, limit) {
+	return elemint(ascend(this.$, selector, limit));
 };

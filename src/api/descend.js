@@ -65,6 +65,6 @@ function descend(subject, selector, depth, count) {
 	return descend.collector;
 }
 
-$$descend = function chainDescend(selector, limit) {
-	return $$(descend(this.$, selector, limit));
+const $descend = function chainDescend(selector, limit) {
+	return elemint(descend(this.$, selector, limit));
 };

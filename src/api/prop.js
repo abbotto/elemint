@@ -25,19 +25,19 @@ function prop(subject) {
 	};
 }
 
-$$prop = {
-	get: function chainPropGet() {
-		return propGet.apply($$.fn.$[0], arguments);
+const $prop = {
+	get: function chainPropGet(...props) {
+		return propGet.apply(elemint.fn.$[0], props);
 	},
-	set: function chainPropSet(prp, value) {
-		prop($$.fn.$).set(prp, value);
-		return $$.fn;
+	set: function chainPropSet(property, value) {
+		prop(elemint.fn.$).set(property, value);
+		return elemint.fn;
 	},
-	test: function chainPropTest(prp) {
-		return propTest.apply($$.fn.$[0], prp);
+	test: function chainPropTest(property) {
+		return propTest.apply(elemint.fn.$[0], property);
 	},
-	void: function chainPropVoid(prp) {
-		prop($$.fn.$).void(prp);
-		return $$.fn;
+	void: function chainPropVoid(property) {
+		prop(elemint.fn.$).void(property);
+		return elemint.fn;
 	}
 };

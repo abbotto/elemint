@@ -1,5 +1,7 @@
+process.env.CHROMIUM_BIN = require('puppeteer').executablePath();
+
 const files = [
-	'../../elemint.js',
+	'../../elemint.dev.js',
 	'../bootstrap.js',
 	'../spec/after.js',
 	'../spec/animate.js',
@@ -15,7 +17,6 @@ const files = [
 	'../spec/mount.js',
 	'../spec/offset.js',
 	'../spec/parent.js',
-	'../spec/position.js',
 	'../spec/prop.js',
 	'../spec/query.js',
 	'../spec/ready.js',
@@ -23,7 +24,8 @@ const files = [
 	'../spec/sibling.js',
 	'../spec/size.js',
 	'../spec/style.js',
-	'../spec/unmount.js'
+	'../spec/unmount.js',
+	'../spec/watch.js'
 ];
 
 const specReporter = {
@@ -42,12 +44,13 @@ const settings = {
 	captureTimeout: 30000,
 	colors: true,
 	concurrency: Infinity,
+	files,
+	flags: ['--no-sandbox'],
 	frameworks: ['chai', 'mocha'],
 	logLevel: 'INFO',
 	port: 9876,
 	reporters: ['spec'],
 	singleRun: true,
-	files,
 	specReporter
 };
 

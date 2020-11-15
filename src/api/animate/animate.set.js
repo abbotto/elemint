@@ -33,7 +33,12 @@ function animateSet(config) {
 
 	if (tag) {
 		if (callback) {
-			raf.callback(tag, callback);
+			const raf = () => {
+				callback();
+				animations.job[tag] = requestAnimationFrame(raf);
+			};
+
+			!animations.job[tag] && raf();
 		} else {
 			return !!animations.job[tag];
 		}

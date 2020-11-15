@@ -5,12 +5,12 @@
  * @description
  * Unmounting is a process that removes elements from the DOM.
  * Unmount an element or it's relative.
- * - after: Remove the "nextElementSibling" of the subject
- * - before: Remove the "previousElementSibling" of the subject
- * - innerBegin: Remove the "firstChild" of the subject
- * - innerEnd: Remove the "lastChild" of the subject
- * - outerBegin: Remove the "firstChild" sibling within the subject's parent
- * - outerEnd: Remove the "lastChild" sibling within the subject's parent
+ * - after: Remove the `nextElementSibling` of the subject
+ * - before: Remove the `previousElementSibling` of the subject
+ * - innerBegin: Remove the `firstChild` of the subject
+ * - innerEnd: Remove the `lastChild` of the subject
+ * - outerBegin: Remove the `firstChild` sibling within the subject's parent
+ * - outerEnd: Remove the `lastChild` sibling within the subject's parent
  *
  * @param {Array|Element} target The point of reference for the mountpoint.
  * @param {Element|String} relative The mountpoint of an element that will be removed relative to the target.
@@ -74,7 +74,7 @@ function unmount(subject, mountpoint) {
 	}
 }
 
-$$unmount = function chainUnmount(position, target) {
+const $unmount = function chainUnmount(position, target) {
 	unmount(this.$, position, target);
 	return this;
 };
